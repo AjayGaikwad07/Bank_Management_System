@@ -1,0 +1,2 @@
+The Bank Management System is a comprehensive software solution designed to streamline banking operations. It offers various functionalities including account creation, updating account details, managing account holder lists, CRUD operations with accounts. The system includes a secure login and signup authentication page to ensure data privacy and security.
+Programming Language: Java, Frontend: Bootstrap, JavaScript, Database: MySQL, Frameworks: Spring Boot, Hibernate.
