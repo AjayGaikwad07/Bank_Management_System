@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Page with Background Image</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+
+        body {
+            background-image: url('Bank_Image.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh; /* Use min-height instead of height for the body to allow for content overflow */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Align header and footer vertically */
+            position: relative; /* Position footer relative to the body */
+        }
+
+        /* Custom styling */
+        .button-container {
+            text-align: center;
+        }
+
+        .btn-custom {
+            margin: 0 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+
+        /* Custom header and footer styles */
+        header, footer {
+            background-color: #333;
+            color: #fff;
+            padding: 8px 0;
+            width: 100%;
+            text-align: center;
+            position: absolute; /* Position header and footer absolutely */
+            left: 0;
+        }
+
+        header {
+            top: 0; /* Place header at the top */
+        }
+
+        footer {
+            bottom: 0; /* Place footer at the bottom */
+        }
+
+        .logo {
+            max-width: 40px; /* Set maximum width */
+            height: auto; /* Maintain aspect ratio */
+            margin-right: 10px; /* Add space between logo and heading */
+            margin-right: 10px;
+
+
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-content row align-items-center">
+        <!--        <div class="col-auto">-->
+        <!--            <img src="logo.jpg" alt="National Bank Logo" class="logo">-->
+        <!--        </div>-->
+        <div class="col">
+            <h1>National Bank</h1>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 button-container">
+            <a href="/login" class="btn btn-custom">Admin Login</a>
+            <a href="/signup" class="btn btn-custom">Admin Signup</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 National Bank. All rights reserved.</p>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Transfer Money</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+          .container {
+            max-width: 600px; /* Increased max-width to accommodate two columns */
+            background-color: #fff; /* Container background color */
+            padding: 20px; /* Container padding */
+            border-radius: 10px; /* Container border radius */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Container box shadow */
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        form {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #333;
+            text-align: center;
+        }
+
+        a:hover {
+            color: #555;
+        }
+
+        .button1 {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+        }
+
+        .button1:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Transfer Money</h1>
+    <form action="/transactions/transfer" method="post">
+        <label for="fromAccountNumber">From Account Number:</label>
+        <input type="text" id="fromAccountNumber" name="fromAccountNumber">
+        <label for="toAccountNumber">To Account Number:</label>
+        <input type="text" id="toAccountNumber" name="toAccountNumber">
+        <label for="amount">Amount:</label>
+        <input type="text" id="amount" name="amount">
+<!--        <br><button class="button1" type="submit">Transfer</button></br>-->
+
+    </form>
+    <br><button class="button1" type="submit">Transfer</button></br>
+    <p th:text="${errorMessage}" style="color: red;"></p>
+    <p th:text="${message}" style="color: green;"></p>
+</div>
+</body>
+</html>

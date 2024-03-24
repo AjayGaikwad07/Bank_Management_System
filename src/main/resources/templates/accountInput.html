@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Account Number</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button[type="submit"], .button {
+            background-color: #333;
+            color: #fff;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button[type="submit"]:hover, .button:hover {
+            background-color: #45a049;
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+        .success-message {
+            color: green;
+            margin-top: 10px;
+        }
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Search Account</h1>
+    <form action="/transactions/search" method="post" th:object="${accounts_details}">
+        <label for="accountNumber">Enter Account Number:</label>
+        <input type="text" id="accountNumber" name="accountNumber" required>
+        <button type="submit">Search</button>
+
+        <p th:text="${errorMessage}" class="error-message"></p>
+        <p th:text="'First Name: ' + ${firstName} + ', Last Name: ' + ${lastName}" style="color: black;"></p>
+        <p th:text="'Mobile Number: ' + ${mobileNumber}" ></p>
+        <p th:text="'Account Number: ' + ${accountNumber}" ></p>
+        <p th:text="'Balance: ' + ${balance}" class="success-message"></p>
+        <div class="btn-container">
+            <button class="button" onclick="location.href='/transactions/withdrawal'">Withdraw Cash</button>
+            <button class="button" onclick="location.href='/transactions/'">Back To Home</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

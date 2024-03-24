@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>ATM Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>ATM USER INTERFACE</h1>
+    <div>
+        <button class="button" onclick="location.href='/transactions/withdrawal'">Withdrawal</button>
+        <button class="button" onclick="location.href='/transactions/checkBalance'">Check Balance</button>
+        <button class="button" onclick="location.href='/transfer'">Transfer</button>
+        <button class="button" onclick="location.href='/transactions'">Transactions</button>
+        <button class="button" onclick="location.href='/transactions/search'">Profile</button>
+    </div>
+    <form>
+        <p th:text="${errorMessageprofile}" class="error-message"></p>
+    </form>
+</div>
+</body>
+</html>

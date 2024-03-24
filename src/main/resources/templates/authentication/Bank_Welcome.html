@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Bank Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .bank-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0px;
+        }
+
+        .bank-details h1{
+          margin: 0;
+           text-align: center;
+            font-size: 24px;
+        }
+
+        .bank-details h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .bank-details p {
+            margin: 0;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .bank-details .logo {
+            max-width: 150px;
+            text-align: center;
+            height: auto;
+        }
+
+        .terms {
+            margin-top: 30px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+
+        .terms h3 {
+            margin: 0 0 10px;
+            font-size: 20px;
+        }
+
+        .terms p {
+            margin: 0;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="bank-details">
+        <form action="/transactions/welcome">
+            <h1>Welcome to National Bank</h1>
+            <img class="logo" src="logo.jpg" alt="Bank Logo">
+            <h2>National Bank</h2>
+            <p>Address: 123 Main Street, City, Country</p>
+            <p>Phone: +123 456 789</p>
+            <p>Email: info@nationalbank.com</p>
+            <p>Website: <a href="http://www.nationalbank.com">www.nationalbank.com</a></p>
+    </div>
+    <div class="terms">
+        <h3>Terms and Conditions</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consectetur velit sed erat efficitur, vitae rhoncus libero sodales. Phasellus nec arcu sit amet justo dapibus euismod. Nulla eget semper nunc. In hac habitasse platea dictumst.</p>
+    </div>
+    </form>
+</div>
+</body>
+</html>

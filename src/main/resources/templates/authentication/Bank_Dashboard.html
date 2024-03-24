@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="mainpage_style.css">
+    <link rel="stylesheet" href="footer.css">
+    <style>
+        * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      /* Style the header */
+      header {
+        background-color: #666;
+        padding: 4px;
+        text-align: left ;
+        padding-left: 20px;
+        font-size: 12px;
+        color: white;
+        display: flex; /* Add flex display for alignment */
+        justify-content: space-between; /* Space items evenly */
+        align-items: center; /* Center vertically */
+      }
+
+      .logo {
+        max-width: 60px; /* Set the maximum width for the logo container */
+        margin: 30px;   /* Center the logo horizontally */
+        align-items: center;
+        justify-content: center;
+      }
+
+      .logo img {
+        width: 50px; /* Make the image fill the entire width of the .logo container */
+        height: 50px; /* Maintain the image's aspect ratio */
+        max-width: 100px; /* Adjust the max-width of the logo image */
+        margin-right: 10px;
+        margin-left: 4px;
+        margin-top: 10px;
+      }
+
+      /* Create two columns/boxes that floats next to each other */
+      nav {
+        float: left;
+        width: 16%;
+        height: 500px; /* only for demonstration, should be removed */
+        background: #ccc;
+        padding: 10px;
+      }
+
+      /* Style the list inside the menu */
+      nav ul {
+        list-style-type:none;
+        margin-top: 40px;
+        padding: 0;
+      }
+
+      article {
+        float: left;
+        padding: 10px;
+        width: 84%;
+        background-color: white;
+        height: 500px; /* only for demonstration, should be removed */
+      }
+
+      /* Clear floats after the columns */
+      section::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      /* Style the footer */
+      footer {
+        background-color: #777;
+        padding: 20px;
+        text-align: center;
+        color: white;
+      }
+
+      .button {
+        text-decoration: none;
+        padding: 8px 10px;
+        border-radius: 3px;
+        background-color: #1b6ca2;
+        color: #fff;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+        margin: 8px; /* Add a margin of 5px */
+        margin-top: 15px;
+        display:list-item/* Ensure the button is displayed as a block element with specified margin */
+      }
+
+      /* Styles for the logout button */
+      .logout-btn {
+        background-color: #f44336; /* Red color */
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        text-align: right ;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 4px;
+        cursor: pointer;
+        margin-right:20px; /* Add margin to position the logout button */
+      }
+
+      .logout-btn:hover {
+        background-color: #d32f2f; /* Darker red color */
+      }
+
+      .button:hover {
+        background-color: #50ace9;
+      }
+
+      footer {
+        background-color: #333;
+        color: white;
+        padding: 4px;
+        text-align: center;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+
+      .footer-section {
+        flex: 1;
+        margin: 0 20px;
+      }
+
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #fff;
+      }
+
+      .footer-section p {
+        color: #ccc;
+      }
+
+      .footer-section a {
+        text-decoration: none;
+        color: #ccc;
+        display: inline-block;
+        margin-right: 10px; /* Adjust the spacing between social links */
+      }
+
+      .footer-section a:hover {
+        color: #fff;
+      }
+
+      /* Responsive styles for mobile view */
+      @media (max-width: 767px) {
+        .footer-content {
+          flex-direction: column; /* Stack sections vertically for mobile view */
+          text-align: center; /* Center-align text for mobile view */
+        }
+
+        .footer-section {
+          flex: none; /* Reset flex property to allow sections to take full width */
+          margin: 0;
+          margin-bottom: 20px;
+        }
+      }
+
+      /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+      @media (max-width: 600px) {
+        nav, article {
+          width: 100%;
+          height: auto;
+        }
+      }
+    </style>
+</head>
+<body>
+<header>
+    <h1>National Bank</h1>
+    <button class="logout-btn">Logout</button>
+</header>
+<section>
+    <nav>
+        <ul class="button-list">
+            <li><a href="/transactions/Welcome_Bank" target="iframe_a" class="button">Home</a></li>
+            <li><a href="/accounts/new"target="iframe_a" class="button">Create Account</a></li>
+            <li><a href="/accounts/" target="iframe_a" class="button">Accounts List</a></li>
+            <li><a href="/transactions/withdrawal" target="iframe_a" class="button">Withdraw Cash</a></li>
+            <li><a href="/transactions/transfer" target="iframe_a" class="button">Transfer Money</a></li>
+            <li><a href="/transactions/checkBalance"target="iframe_a" class="button">Check Balance</a></li>
+            <li><a href="/transactions/search" target="iframe_a" class="button">Search Account</a></li>
+            <li><a href="/transactions/Contact" target="iframe_a"  class="button">Contact Us</a></li>
+        </ul>
+    </nav>
+    <article>
+        <div class="container-fluid" style="margin-top:1px">
+            <iframe src="demo_iframe.htm" name="iframe_a" height="480px" width="100%" title="Iframe Example"></iframe>
+        </div>
+    </article>
+</section>
+<footer>
+    <div class="footer-bottom">
+        <p>&copy; 2024 National Bank. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
