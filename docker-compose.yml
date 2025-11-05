@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  app:
+    image: atm_machine_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: atm_app_container
+    ports:
+      - "1002:1002"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/student_MS
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: root1234
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8
+    container_name: atm_mysql_container
+    environment:
+      MYSQL_DATABASE: student_MS
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
